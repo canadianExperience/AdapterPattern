@@ -15,11 +15,11 @@ class MainActivity : AppCompatActivity() {
 
         //Adapter design pattern (object adapter)
         val socket = Socket()
-        val adapter = SocketAdapter(socket)
+        val adapter = SocketAdapter()
 
-        val v120 = adapter.get120Volt().volts
-        val v12 = adapter.get12Volt().volts
-        val v3 = adapter.get3Volt().volts
+        val v120 = adapter.get120Volt(socket).volts
+        val v12 = adapter.get12Volt(socket).volts
+        val v3 = adapter.get3Volt(socket).volts
 
         Log.d(TAG, "Socket adapter: v_120 = $v120, v_12 = $v12, v_3 = $v3")
     }
